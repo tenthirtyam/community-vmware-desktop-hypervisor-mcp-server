@@ -1,0 +1,46 @@
+# Ignore editor directories, except tracked MCP config.
+.cursor/
+.idea/
+.vscode/
+
+# Ignore temporary editor files.
+*~
+*.swp
+*.swo
+
+# Ignore macOS desktop services store files.
+.DS_Store
+Thumbs.db
+
+# Ignore Python files.
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+.env
+.python-version
+
+# Ignore testing files.
+.pytest_cache/
+.coverage*
+coverage.xml
+htmlcov/
+
+# Ignore type checking files.
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Ignore linting files.
+.ruff_cache/
+
+# Ignore documentation files.
+site/
+.site/
+docs/_build/

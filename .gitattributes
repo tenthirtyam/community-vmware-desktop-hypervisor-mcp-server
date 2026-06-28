@@ -1,0 +1,14 @@
+# Default.
+*           text=auto eol=lf
+
+# Normalize to LF.
+*.py        text eol=lf
+*.pyi       text eol=lf
+*.toml      text eol=lf
+*.md        text eol=lf
+*.yml       text eol=lf
+*.txt       text eol=lf
+Makefile     text eol=lf
+CODEOWNERS  text eol=lf
+LICENSE     text eol=lf
+NOTICE      text eol=lf
