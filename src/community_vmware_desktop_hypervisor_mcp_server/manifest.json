@@ -1,0 +1,255 @@
+{
+  "version": "1.0",
+  "platform": "Darwin",
+  "binary": "/Applications/VMware Fusion.app/Contents/Library/vmcli",
+  "global_args": {
+    "vmx": {
+      "required_for_vm_ops": true,
+      "position": "first_or_last"
+    },
+    "verbose": "--verbose"
+  },
+  "modules": {
+    "Chipset": {
+      "description": "Chipset options.",
+      "commands": {
+        "query": {},
+        "SetCoresPerSocket": {},
+        "SetMemSize": {},
+        "SetSimultaneousThreads": {},
+        "SetVCpuCount": {}
+      }
+    },
+    "ConfigParams": {
+      "description": "Set VM configuration parameters.",
+      "commands": {
+        "query": {},
+        "SetEntry": {}
+      }
+    },
+    "Disk": {
+      "description": "Module to perform disk operations.",
+      "commands": {
+        "Branch": {},
+        "BranchCancel": {},
+        "ConnectionControl": {},
+        "ConvertAllocType": {},
+        "ConvertAllocTypeCancel": {},
+        "Create": {},
+        "Extend": {},
+        "IsPresent": {},
+        "Move": {},
+        "Purge": {},
+        "query": {},
+        "SetAllowGuestControl": {},
+        "SetBackingInfo": {},
+        "SetBandwidthCap": {},
+        "SetCbrcCacheEnabled": {},
+        "SetCtkEnabled": {},
+        "SetDigest": {},
+        "SetDiskUUID": {},
+        "SetDiskUuidEnabled": {},
+        "SetExclusiveAccess": {},
+        "SetGlobalCtkDisallowed": {},
+        "SetHardDiskHostBuffer": {},
+        "SetHardDiskPageAlign": {},
+        "SetHideTypeOfROnlyPart": {},
+        "SetMode": {},
+        "SetPolicy": {},
+        "SetPresent": {},
+        "SetReadOnly": {},
+        "SetReservation": {},
+        "SetShares": {},
+        "SetSharing": {},
+        "SetSpifFilters": {},
+        "SetStartConnected": {},
+        "SetThroughputCap": {},
+        "SetWriteThrough": {}
+      }
+    },
+    "Ethernet": {
+      "description": "Setup the ethernet configuration in the guest.",
+      "commands": {
+        "ConnectionControl": {},
+        "IsPresent": {},
+        "MoveDevice": {},
+        "Purge": {},
+        "query": {},
+        "SetAddressType": {},
+        "SetAllowGuestControl": {},
+        "SetConnectionType": {},
+        "SetCustomTypeBacking": {},
+        "SetDvsTypeBacking": {},
+        "SetExternalId": {},
+        "SetFeatures": {},
+        "SetLinkStatePropagation": {},
+        "SetMigrateControl": {},
+        "SetNetworkName": {},
+        "SetNiocTypeBacking": {},
+        "SetOpaqueNetworkTypeBacking": {},
+        "SetPciSlotNumber": {},
+        "SetPresent": {},
+        "SetPvnTypeBacking": {},
+        "SetSecurityPolicy": {},
+        "SetStartConnected": {},
+        "SetTransferLatency": {},
+        "SetTransferRate": {},
+        "SetUptCompatibility": {},
+        "SetVirtualDevice": {},
+        "SetWakeOnPcktRcv": {}
+      }
+    },
+    "Guest": {
+      "description": "guest ops",
+      "commands": {
+        "copyFrom": {},
+        "copyTo": {},
+        "createTempDir": {},
+        "createTempFile": {},
+        "env": {},
+        "kill": {},
+        "ls": {},
+        "mkdir": {},
+        "mv": {},
+        "mvdir": {},
+        "ps": {},
+        "query": {},
+        "rm": {},
+        "rmdir": {},
+        "run": {},
+        "toolsproperties": {}
+      }
+    },
+    "HGFS": {
+      "description": "HGFS options.",
+      "commands": {
+        "query": {},
+        "SetEnabled": {},
+        "SetExpiration": {},
+        "SetFollowSymlinks": {},
+        "SetGuestName": {},
+        "SetHostDefaultCase": {},
+        "SetHostPath": {},
+        "SetPresent": {},
+        "SetReadAccess": {},
+        "SetTags": {},
+        "SetWriteAccess": {}
+      }
+    },
+    "MKS": {
+      "description": "Mouse, keyboard and screen operations.",
+      "commands": {
+        "captureScreenshot": {},
+        "query": {},
+        "sendKeyEvent": {},
+        "sendKeySequence": {},
+        "SetAccel3d": {},
+        "SetFullscreenAtPowerOn": {},
+        "SetFullScreenOnAllHostDisplays": {},
+        "SetGraphicsMemoryKB": {},
+        "SetGuestResolution": {},
+        "SetNumDisplays": {},
+        "SetRenderer3d": {},
+        "SetVramSize": {}
+      }
+    },
+    "Nvme": {
+      "description": "Setup NVME ports in the guest.",
+      "commands": {
+        "FindFirstFree": {},
+        "IsChildPresent": {},
+        "Move": {},
+        "Purge": {},
+        "query": {},
+        "SetBusType": {},
+        "SetMaxDevices": {},
+        "SetPciSlotNumber": {},
+        "SetPresent": {},
+        "SetType": {}
+      }
+    },
+    "Power": {
+      "description": "Set the power state of the vm.",
+      "commands": {
+        "Pause": {},
+        "query": {},
+        "Reset": {},
+        "Start": {},
+        "Stop": {},
+        "Suspend": {},
+        "Unpause": {}
+      }
+    },
+    "Sata": {
+      "description": "Setup SATA ports in the guest.",
+      "commands": {
+        "FindFirstFree": {},
+        "HasNoDevice": {},
+        "IsChildPresent": {},
+        "IsPresent": {},
+        "Move": {},
+        "Purge": {},
+        "query": {},
+        "SetMaxDevices": {},
+        "SetNumaNode": {},
+        "SetPciSlotNumber": {},
+        "SetPresent": {},
+        "SetType": {}
+      }
+    },
+    "Serial": {
+      "description": "Setup serial ports in the guest.",
+      "commands": {
+        "ConnectionControl": {},
+        "Purge": {},
+        "Query": {},
+        "SetAllowGuestControl": {},
+        "SetBackingInfo": {},
+        "SetPresent": {},
+        "StartConnected": {},
+        "TryNoRxLoss": {},
+        "YieldOnMsrRead": {}
+      }
+    },
+    "Snapshot": {
+      "description": "Snapshot configuration",
+      "commands": {
+        "Clone": {},
+        "Delete": {},
+        "query": {},
+        "Revert": {},
+        "Take": {}
+      }
+    },
+    "Tools": {
+      "description": "Tools related configuration.",
+      "commands": {
+        "Install": {},
+        "Query": {},
+        "Upgrade": {}
+      }
+    },
+    "VM": {
+      "description": "VM related Operations",
+      "commands": {
+        "Create": {}
+      }
+    },
+    "VMTemplate": {
+      "description": "Create and Deploy vm template",
+      "commands": {
+        "Create": {},
+        "Deploy": {}
+      }
+    },
+    "VProbes": {
+      "description": "Setup VProbes in the guest.",
+      "commands": {
+        "Load": {},
+        "Query": {},
+        "Reset": {},
+        "SetEnabled": {}
+      }
+    }
+  }
+}

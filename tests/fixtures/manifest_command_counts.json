@@ -1,0 +1,18 @@
+{
+  "Chipset": 5,
+  "ConfigParams": 2,
+  "Disk": 35,
+  "Ethernet": 27,
+  "Guest": 16,
+  "HGFS": 11,
+  "MKS": 12,
+  "Nvme": 10,
+  "Power": 7,
+  "Sata": 12,
+  "Serial": 9,
+  "Snapshot": 5,
+  "Tools": 3,
+  "VM": 1,
+  "VMTemplate": 2,
+  "VProbes": 4
+}

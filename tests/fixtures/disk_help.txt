@@ -1,0 +1,127 @@
+Usage:
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] Create [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] Branch [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] BranchCancel [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] ConnectionControl [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] ConvertAllocType [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] ConvertAllocTypeCancel [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] Extend [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] IsPresent [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] Move [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] Purge [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] query [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetAllowGuestControl [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetBackingInfo [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetBandwidthCap [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetCbrcCacheEnabled [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetCtkEnabled [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetDigest [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetDiskUUID [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetDiskUuidEnabled [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetExclusiveAccess [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetGlobalCtkDisallowed [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetHardDiskHostBuffer [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetHardDiskPageAlign [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetHideTypeOfROnlyPart [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetMode [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetPolicy [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetPresent [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetReadOnly [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetReservation [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetShares [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetSharing [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetSpifFilters [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetStartConnected [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetThroughputCap [--help | OPTIONS]
+ vmcli [<vmx location>] Disk [GLOBAL OPTIONS] SetWriteThrough [--help | OPTIONS]
+Global arguments:
+	<vmx location>		(required for commands working with VMs)
+	    Location of the vmx file to work with. Can be the first or last argument on the command line.
+	--verbose
+	    Enable verbose logging.
+	-h, --help
+	    Display the help information
+Module:
+	Disk
+	    Module to perform disk operations.
+Arguments available to module "Disk":
+	Create
+	    Create Disk Files.
+        e.g Disk Create -f myVirtualDisk.vmdk -a ide -s 1000MB -t 0
+	Branch
+	    Create a new disk branch based on the current VM state.
+	BranchCancel
+	    Request that a running branch operation be canceled.
+	ConnectionControl
+	    Alter the connection state of the specified device.
+
+Connect or disconnect the specified device. If the device is already
+in the requested state no error will occur. Any change will be
+immediate.c
+
+Altering the connection state via this routine does not affect or
+control how the device connects upon power on. Use SetStartConnected
+for that.
+
+The device must be present (active in the VM) or an error will occur.
+	ConvertAllocType
+	    Convert the allocation type of the entire disk.
+	ConvertAllocTypeCancel
+	    Request that a running convert allocation type operation be canceled.
+	Extend
+	    Extend the specified virtual disk..
+	IsPresent
+	    Determine if the specified device is present.
+	Move
+	    Move the specified device from one "location" to another. The fromDeviceLabel must exist, the toDeviceLabel must not.
+	Purge
+	    Purge the specified device.
+	query
+	    Query the state of disks inside virtual machine.
+	SetAllowGuestControl
+	    This attribute controls the ability of a guest OS to access and control the specified device.
+	SetBackingInfo
+	    Set the backing object attributes of the specified device.
+	SetBandwidthCap
+	    This attribute controls the bandwidth cap attribute of the specified disk. Units are bytes per second.
+	SetCbrcCacheEnabled
+
+	SetCtkEnabled
+
+	SetDigest
+
+	SetDiskUUID
+
+	SetDiskUuidEnabled
+
+	SetExclusiveAccess
+
+	SetGlobalCtkDisallowed
+
+	SetHardDiskHostBuffer
+
+	SetHardDiskPageAlign
+
+	SetHideTypeOfROnlyPart
+
+	SetMode
+
+	SetPolicy
+
+	SetPresent
+
+	SetReadOnly
+
+	SetReservation
+
+	SetShares
+
+	SetSharing
+
+	SetSpifFilters
+
+	SetStartConnected
+
+	SetThroughputCap
+
+	SetWriteThrough

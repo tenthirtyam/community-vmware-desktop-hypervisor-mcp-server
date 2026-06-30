@@ -1,0 +1,92 @@
+Usage:
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] query [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] ConnectionControl [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] IsPresent [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] MoveDevice [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] Purge [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetAddressType [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetAllowGuestControl [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetConnectionType [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetCustomTypeBacking [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetDvsTypeBacking [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetExternalId [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetFeatures [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetLinkStatePropagation [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetNetworkName [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetMigrateControl [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetNiocTypeBacking [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetOpaqueNetworkTypeBacking [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetPciSlotNumber [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetPresent [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetPvnTypeBacking [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetSecurityPolicy [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetStartConnected [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetTransferLatency [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetTransferRate [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetUptCompatibility [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetVirtualDevice [--help | OPTIONS]
+ vmcli [<vmx location>] Ethernet [GLOBAL OPTIONS] SetWakeOnPcktRcv [--help | OPTIONS]
+Global arguments:
+	<vmx location>		(required for commands working with VMs)
+	    Location of the vmx file to work with. Can be the first or last argument on the command line.
+	--verbose
+	    Enable verbose logging.
+	-h, --help
+	    Display the help information
+Module:
+	Ethernet
+	    Setup the ethernet configuration in the guest.
+Arguments available to module "Ethernet":
+	query
+	    Query the configuration of the VM.
+	ConnectionControl
+
+	IsPresent
+	    Determine if the specified device is present.
+	MoveDevice
+
+	Purge
+
+	SetAddressType
+
+	SetAllowGuestControl
+
+	SetConnectionType
+
+	SetCustomTypeBacking
+
+	SetDvsTypeBacking
+
+	SetExternalId
+
+	SetFeatures
+
+	SetLinkStatePropagation
+
+	SetNetworkName
+
+	SetMigrateControl
+
+	SetNiocTypeBacking
+
+	SetOpaqueNetworkTypeBacking
+
+	SetPciSlotNumber
+
+	SetPresent
+
+	SetPvnTypeBacking
+
+	SetSecurityPolicy
+
+	SetStartConnected
+
+	SetTransferLatency
+
+	SetTransferRate
+
+	SetUptCompatibility
+
+	SetVirtualDevice
+
+	SetWakeOnPcktRcv
