@@ -1,0 +1,69 @@
+---
+name: Release
+
+on:
+  push:
+    tags:
+      - v[0-9]+.[0-9]+.[0-9]+
+      - v[0-9]+.[0-9]+.[0-9]+-*
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    name: Build and Publish Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
+      - name: Setup Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: "3.12"
+      - name: Verify Version Matches Tag
+        run: |
+          TAG_VERSION="${GITHUB_REF#refs/tags/v}"
+          PYPROJECT_VERSION="$(python -c "import tomllib; print(tomllib.load(open('pyproject.toml','rb'))['project']['version'])")"
+          if [ "${TAG_VERSION}" != "${PYPROJECT_VERSION}" ]; then
+            echo "Tag v${TAG_VERSION} does not match pyproject.toml version ${PYPROJECT_VERSION}"
+            exit 1
+          fi
+      - name: Build Package
+        run: make build
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@6733eb7d741f0b11ec6a39b58540dab7590f9b7d # v1.14.0
+        with:
+          skip-existing: true
+      - name: Get Version
+        id: version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> "$GITHUB_OUTPUT"
+      - name: Create GitHub Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PRERELEASE_FLAG=""
+          if echo "${GITHUB_REF}" | grep -q '-'; then
+            PRERELEASE_FLAG="--prerelease"
+          fi
+          gh release create "${{ github.ref_name }}" \
+            --title "v${{ steps.version.outputs.VERSION }}" \
+            dist/* \
+            --notes "Refer to the [documentation](https://tenthirtyam.org/community-vmware-desktop-hypervisor-mcp-server) to get started with this community MCP server." \
+            ${PRERELEASE_FLAG}
+  docs:
+    name: Build Documentation
+    runs-on: ubuntu-latest
+    needs: release
+    permissions:
+      actions: write
+    steps:
+      - name: Run Documentation Workflow
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run docs.yml --repo ${{ github.repository }} --ref main
