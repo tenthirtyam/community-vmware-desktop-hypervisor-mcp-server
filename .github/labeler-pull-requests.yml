@@ -1,0 +1,44 @@
+---
+chore:
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".editorconfig"
+          - ".gitattributes"
+          - ".gitignore"
+          - ".pre-commit-config.yaml"
+          - "Makefile"
+          - "properdocs.yml"
+          - "pyproject.toml"
+          - ".github/CODE-OF-CONDUCT.md"
+          - ".github/CODEOWNERS"
+          - ".github/dependabot.yml"
+          - ".github/DISCUSSION_TEMPLATE/**/*"
+          - ".github/ISSUE_TEMPLATE/**/*"
+          - ".github/labeler-issues.yml"
+          - ".github/labeler-pull-requests.yml"
+          - ".github/settings.yml"
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "pyproject.toml"
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.md"
+          - "docs/**/*"
+          - "LICENSE"
+          - "NOTICE.md"
+enhancement:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "scripts/**/*"
+          - "src/**/*"
+          - "tests/**/*"
+github-actions:
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/workflows/**/*"
+needs-review:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**"

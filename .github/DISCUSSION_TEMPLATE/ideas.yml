@@ -1,0 +1,33 @@
+---
+labels: ["idea"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before submitting an idea discussion, please search for related discussions and use the [reaction](https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) to add up-votes to existing submissions.
+
+        When submitting an idea discussion, please include the following information.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A written overview of the idea.
+    validations:
+      required: true
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case(s)
+      description: Please provide a use case or scenario for the idea.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: |
+        Please provide any related discussions, issues, or pull requests (open or closed) or documentation.
+      placeholder: |
+        #GH-0000
+    validations:
+      required: false

@@ -1,0 +1,120 @@
+---
+labels: ["triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before filing a triage discussion, please [search the existing discussions](https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server/discussions) (open or closed), and use the [reaction](https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) feature to add up-votes to existing submissions.
+
+        When opening a triage discussion, please include the following information.
+  - type: input
+    id: version
+    attributes:
+      label: MCP Server Version
+      description: |
+        Please provide the version of the MCP Server.
+        We recommend testing with [the latest release](https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server/releases/latest).
+      placeholder: e.g. x.y.z
+    validations:
+      required: true
+  - type: dropdown
+    id: desktop-hypervisor
+    attributes:
+      label: Desktop Hypervisor
+      description: Select the platform where the issue occurs.
+      options:
+        - VMware Fusion on macOS
+        - VMware Workstation on Windows
+        - VMware Workstation on Linux
+    validations:
+      required: true
+  - type: input
+    id: desktop-hypervisor-version
+    attributes:
+      label: Desktop Hypervisor Version
+      description: Please provide the VMware desktop hypervisor version.
+      placeholder: e.g. 26H1
+    validations:
+      required: true
+  - type: input
+    id: os-version
+    attributes:
+      label: OS Version
+      description: Please provide the operating system version.
+      placeholder: e.g. macOS Tahoe 26.5.1
+    validations:
+      required: true
+  - type: dropdown
+    id: mcp-host
+    attributes:
+      label: MCP Host
+      description: Select the MCP host where the issue occurs.
+      options:
+        - VS Code
+        - Cursor
+        - Claude Desktop
+        - Claude Code
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Please provide a clear and concise description of the issue you are experiencing.
+    validations:
+      required: true
+  - type: textarea
+    id: configuration
+    attributes:
+      label: MCP Host Configuration
+      description: |
+        - Please provide your MCP host configuration (e.g. `.vscode/mcp.json`, `.cursor/mcp.json`, or `claude_desktop_config.json`).
+        - Please ensure all secrets and identifiable information is removed.
+        - Please format any code in code blocks using the markdown editor.
+      placeholder: |
+        Please format any code in code blocks using the markdown editor.
+    validations:
+      required: true
+  - type: textarea
+    id: debug
+    attributes:
+      label: Debug Output
+      description: |
+        Please provide a link to a [GitHub Gist](https://gist.github.com/) containing relevant logs.
+        Enable debug logging with `VMCLI_LOG_LEVEL=DEBUG` in your MCP host `env` block.
+      placeholder: |
+        Link to a GitHub Gist. Please do not paste the full debug output in the issue.
+    validations:
+      required: false
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happened that's different from the expected behavior?
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Please provide the steps to reproduce the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: |
+        Please provide any related GitHub issues or pull requests (open or closed) or documentation.
+      placeholder: |
+        #GH-0000
+    validations:
+      required: false
