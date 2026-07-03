@@ -8,9 +8,7 @@ issues.
 
 ## Supported Versions
 
-For a list of support versions that this project will potentially create security fixes for, please
-refer to the Releases page on this project's GitHub and/or project related documentation on release
-cadence and support.
+Security fixes are applied to actively maintained releases.
 
 ## Reporting a Vulnerability
 
@@ -24,16 +22,12 @@ minor) release as soon as possible. This information could be kept entirely inte
 If you know of a publicly disclosed security vulnerability for this project, please contact the
 maintainers of this project privately. The use of encrypted email is encouraged.
 
-To report a vulnerability or a security-related issue, please provide details through one of the
-following channels:
-
-- Sent an email to [`hello@tenthirtyam.org`][tenthirtyam].
-- Open a GitHub Security Advisory.
+To report a vulnerability or a security-related issue, please provide details by opening a GitHub Security Advisory.
 
   This allows for anyone to report security vulnerabilities directly and privately to the
   maintainers via GitHub. Note that this option may not be present for every repository.
 
-Feedback will be sent within 7 business days, including a detailed plan to investigate the issue and
+Feedback will be sent as soon as possible, including a detailed plan to investigate the issue and
 any potential workarounds to perform in the meantime.
 
 Do not report non-security-impacting bugs through this channel. Use GitHub issues for all
@@ -69,12 +63,12 @@ vulnerabilities in dependencies.
 Upon acknowledgment, maintainers investigate, coordinate with the reporter, and prepare a patch or
 workaround. If not deemed a true vulnerability, they provide the rationale.
 
-[`tenthirtyam`][tenthirtyam] will respond to vulnerability reports as follows:
+The maintainers will respond to vulnerability reports as follows:
 
 1. Will investigate the vulnerability and determine its effects and criticality.
 2. If the issue is not deemed to be a vulnerability, a follow up will be provided with a detailed
    reason for rejection.
-3. Will initiate a conversation with the reporter within 7 business days.
+3. Will initiate a conversation with the reporter as soon as possible.
 4. If a vulnerability is acknowledged and the timeline for a fix is determined, a plan to
    communicate with the appropriate community, including identifying mitigating steps that affected
    users can take to protect themselves until the fix is rolled out will be provided.
@@ -109,5 +103,3 @@ secure-by-default. It is necessary for operators to explicitly configure setting
 control, and other resource related features in this project to provide a hardened environment. We
 will not act on any security disclosure that relates to a lack of safe defaults. Over time, we will
 work towards improved safe-by-default configuration, taking into account backwards compatibility.
-
-[tenthirtyam]: mailto:hello@tenthirtyam.org

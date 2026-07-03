@@ -111,15 +111,4 @@ flowchart TD
 
     Only connect **trusted MCP clients** and review destructive tool calls before approving them.
 
-## Sponsor
-
-[![Sponsor](https://img.shields.io/badge/Sponsor-EA4AAA?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/tenthirtyam)&nbsp;&nbsp;
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=white)](https://buymeacoffee.com/tenthirtyam)
-
-## License
-
-Copyright &copy; Ryan Johnson.
-
-Licensed under the [MIT License](community/license.md).
-
 [tm]: community/disclaimer.md#trademark-notice

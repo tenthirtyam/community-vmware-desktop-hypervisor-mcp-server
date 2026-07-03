@@ -12,11 +12,6 @@ operations to MCP hosts through the local `vmcli` CLI.[^1][^2]
 Refer to the [documentation][documentation] for guidance on getting started with this community MCP
 server.
 
-## Sponsor
-
-[![Sponsor](https://img.shields.io/badge/Sponsor-EA4AAA?style=for-the-badge&logo=githubsponsors&logoColor=white)][sponsor]&nbsp;&nbsp;
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=white)][buy-me-a-coffee]
-
 ## Disclaimer
 
 This is an independent, community-maintained project. It is not an official Broadcom product, nor is it affiliated with, sponsored by, or supported by Broadcom. Refer to the [Disclaimer][disclaimer] for full details.

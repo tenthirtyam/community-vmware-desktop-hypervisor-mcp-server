@@ -208,9 +208,10 @@ nav:
       - community/index.md
       - Contributing: community/contributing.md
       - Code of Conduct: community/code-of-conduct.md
-      - Security: community/security.md
       - Development: community/development.md
       - Releases: https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server/releases
       - Discussions: https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server/discussions
       - License: community/license.md
+      - Security: community/security.md
       - Disclaimer: community/disclaimer.md
+      - Sponsor: https://github.com/sponsors/tenthirtyam
