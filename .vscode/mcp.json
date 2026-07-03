@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "community-vmware-desktop-hypervisor-mcp-server": {
+      "type": "stdio",
+      "command": "/bin/sh",
+      "args": [
+        "-c",
+        "exec env PYTHONPATH=\"${workspaceFolder}/src\" \"${workspaceFolder}/.venv/bin/python\" -m community_vmware_desktop_hypervisor_mcp_server.server"
+      ]
+    }
+  }
+}
