@@ -11,9 +11,14 @@ permissions:
   contents: read
 
 jobs:
+  tests:
+    name: Run Tests
+    uses: ./.github/workflows/tests.yml
+
   release:
     name: Build and Publish Release
     runs-on: ubuntu-latest
+    needs: tests
     permissions:
       contents: write
       id-token: write
@@ -26,20 +31,22 @@ jobs:
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         with:
           python-version: "3.12"
+      - name: Create Virtual Environment
+        run: make venv
       - name: Verify Version Matches Tag
+        shell: bash
         run: |
+          set -e
+          source .venv/bin/activate
           TAG_VERSION="${GITHUB_REF#refs/tags/v}"
           PYPROJECT_VERSION="$(python -c "import tomllib; print(tomllib.load(open('pyproject.toml','rb'))['project']['version'])")"
           if [ "${TAG_VERSION}" != "${PYPROJECT_VERSION}" ]; then
             echo "Tag v${TAG_VERSION} does not match pyproject.toml version ${PYPROJECT_VERSION}"
             exit 1
           fi
+          make verify-version
       - name: Build Package
         run: make build
-      - name: Publish to PyPI
-        uses: pypa/gh-action-pypi-publish@6733eb7d741f0b11ec6a39b58540dab7590f9b7d # v1.14.0
-        with:
-          skip-existing: true
       - name: Get Version
         id: version
         run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> "$GITHUB_OUTPUT"
@@ -55,15 +62,8 @@ jobs:
             --title "v${{ steps.version.outputs.VERSION }}" \
             dist/* \
             --notes "Refer to the [documentation](https://tenthirtyam.org/community-vmware-desktop-hypervisor-mcp-server) to get started with this community MCP server." \
-            ${PRERELEASE_FLAG}
-  docs:
-    name: Build Documentation
-    runs-on: ubuntu-latest
-    needs: release
-    permissions:
-      actions: write
-    steps:
-      - name: Run Documentation Workflow
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh workflow run docs.yml --repo ${{ github.repository }} --ref main
+            ${PRERELEASE_FLAG:+"${PRERELEASE_FLAG}"}
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b # v1.14.0
+        with:
+          skip-existing: true

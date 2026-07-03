@@ -12,6 +12,7 @@ on:
       - 'properdocs.yml'
       - 'Makefile'
       - 'pyproject.toml'
+  workflow_call:
   workflow_dispatch:
 
 concurrency:

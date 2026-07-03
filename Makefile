@@ -152,6 +152,18 @@ build:
 	$(PIP) install build
 	$(PYTHON) -m build
 
+verify-version:
+	@$(PYTHON) -c "\
+import json, tomllib, sys; \
+pyp = tomllib.load(open('pyproject.toml','rb'))['project']['version']; \
+srv = json.load(open('server.json')); \
+errors = []; \
+errors += [f'server.json \".version\" ({srv[\"version\"]!r}) != pyproject.toml ({pyp!r})'] if srv['version'] != pyp else []; \
+errors += [f'server.json \".packages[0].version\" ({srv[\"packages\"][0][\"version\"]!r}) != pyproject.toml ({pyp!r})'] if srv['packages'][0]['version'] != pyp else []; \
+[print(f'ERROR: {e}', file=sys.stderr) for e in errors] or print(f'OK: all versions are {pyp!r}'); \
+sys.exit(bool(errors)) \
+"
+
 discover:
 	PYTHONPATH=src $(PYTHON) scripts/discover_vmcli.py
 
