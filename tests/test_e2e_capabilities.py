@@ -13,9 +13,17 @@ from pathlib import Path
 import pytest
 from mcp.types import CallToolResult, TextContent
 
-from community_vmware_desktop_hypervisor_mcp_server.handlers import invoke_power, vm_list_data
+from community_vmware_desktop_hypervisor_mcp_server.handlers import (
+    invoke_module,
+    invoke_power,
+    vm_list_data,
+)
 from community_vmware_desktop_hypervisor_mcp_server.manifest import query_action_for_module
-from community_vmware_desktop_hypervisor_mcp_server.schemas import MODULE_PARAM_TYPES, PowerParams
+from community_vmware_desktop_hypervisor_mcp_server.schemas import (
+    MODULE_PARAM_TYPES,
+    PowerParams,
+    ToolsParams,
+)
 
 # Import suite runner from scripts (repo root on path via conftest PYTHONPATH in CI)
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -60,6 +68,14 @@ async def test_power_stop_default_op_type(e2e_vmx: str) -> None:
     state = json.loads(q_item.text).get("PowerState", "").lower()
     if state != "on":
         pytest.skip("VM is not powered on; cannot test Stop")
+
+    tools = await invoke_module(ToolsParams(action="Query", vmx_path=e2e_vmx))
+    t_item = tools.content[0]
+    if isinstance(t_item, TextContent):
+        tools_state = json.loads(t_item.text).get("runningStatus", "").lower()
+        if tools_state != "running":
+            pytest.skip("VMware Tools not running; trySoft Stop requires Tools")
+
     result = await invoke_power(PowerParams(action="Stop", vmx_path=e2e_vmx))
     assert result.isError is not True
 

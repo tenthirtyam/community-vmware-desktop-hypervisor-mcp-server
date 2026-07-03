@@ -1,6 +1,7 @@
 # Copyright (c) Ryan Johnson
 # SPDX-License-Identifier: MIT
 
+#!/usr/bin/env python3
 """Run full MCP capability smoke tests against a live .vmx (Fusion/Workstation)."""
 
 from __future__ import annotations
