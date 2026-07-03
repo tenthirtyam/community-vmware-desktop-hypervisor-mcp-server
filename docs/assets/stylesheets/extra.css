@@ -1,0 +1,42 @@
+.md-typeset h1 {
+  margin-bottom: .2em;
+}
+
+.md-typeset h1 + h2 {
+  margin-top: 0;
+}
+
+/* Center Mermaid diagrams in article content. */
+.md-typeset .mermaid {
+  text-align: center;
+}
+
+.md-typeset .mermaid svg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Dark scheme: give Mermaid a stable surface so default/light chart colors are not
+   floating on page background (Mermaid "dark" theme still benefits from a panel). */
+[data-md-color-scheme="slate"] .md-typeset .mermaid {
+  background-color: var(--md-code-bg-color);
+  border-radius: 0.2rem;
+  padding: 0.75rem 0.5rem;
+}
+
+/* Indent child nav items under their section header. */
+.md-nav--primary .md-nav__item .md-nav .md-nav__item {
+  padding-left: 1.5rem;
+}
+
+/* External link indicator on Releases, Discussions, and Issues nav items. */
+.md-nav__link[href*="/releases"]::after,
+.md-nav__link[href*="/discussions"]::after,
+.md-nav__link[href*="/issues"]::after {
+  content: "↗";
+  margin-left: 0.3rem;
+  font-size: 0.7em;
+  opacity: 0.6;
+  vertical-align: super;
+}
