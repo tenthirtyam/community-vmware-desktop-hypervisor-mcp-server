@@ -4,8 +4,8 @@ icon: octicons/home-16
 
 # A Community MCP Server for VMware Desktop Hypervisors
 
-A community MCP server for VMware desktop hypervisors that exposes VMware Fusion and VMware
-Workstation operations to MCP hosts through the local `vmcli` CLI.
+A community MCP server for VMware[®][tm] desktop hypervisors that exposes VMware Fusion[®][tm] and VMware Workstation[™][tm]
+operations to MCP hosts through the local `vmcli` CLI.
 
 [![PyPI](https://img.shields.io/pypi/v/community-vmware-desktop-hypervisor-mcp-server)](https://pypi.org/project/community-vmware-desktop-hypervisor-mcp-server/)
 [![Python](https://img.shields.io/pypi/pyversions/community-vmware-desktop-hypervisor-mcp-server)](https://pypi.org/project/community-vmware-desktop-hypervisor-mcp-server/)
@@ -121,3 +121,5 @@ flowchart TD
 Copyright &copy; Ryan Johnson.
 
 Licensed under the [MIT License](community/license.md).
+
+[tm]: community/disclaimer.md#trademark-notice

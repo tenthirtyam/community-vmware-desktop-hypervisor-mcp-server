@@ -12,6 +12,13 @@
   }
 }
 
+/* Trademark symbol links (® ™) — suppress link color and underline so they
+   sit naturally inline with text while still being navigable. */
+a[href$="#trademark-notice"] {
+  color: inherit;
+  text-decoration: none;
+}
+
 .md-typeset h1 {
   margin-bottom: .2em;
 }

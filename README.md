@@ -1,7 +1,7 @@
 # A Community MCP Server for VMware Desktop Hypervisors
 
-A community MCP server for VMware desktop hypervisors that exposes VMware Fusion and VMware
-Workstation operations to MCP hosts through the local `vmcli` CLI.[^1]
+A community MCP server for VMware® desktop hypervisors that exposes VMware Fusion® and VMware Workstation™
+operations to MCP hosts through the local `vmcli` CLI.[^1][^2]
 
 [![PyPI](https://img.shields.io/pypi/v/community-vmware-desktop-hypervisor-mcp-server?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/community-vmware-desktop-hypervisor-mcp-server/)&nbsp;&nbsp;
 [![Python](https://img.shields.io/pypi/pyversions/community-vmware-desktop-hypervisor-mcp-server?style=for-the-badge&logo=python&logoColor=white)](https://pypi.org/project/community-vmware-desktop-hypervisor-mcp-server/)&nbsp;&nbsp;
@@ -17,6 +17,10 @@ server.
 [![Sponsor](https://img.shields.io/badge/Sponsor-EA4AAA?style=for-the-badge&logo=githubsponsors&logoColor=white)][sponsor]&nbsp;&nbsp;
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=white)][buy-me-a-coffee]
 
+## Disclaimer
+
+This is an independent, community-maintained project. It is not an official Broadcom product, nor is it affiliated with, sponsored by, or supported by Broadcom. Refer to the [Disclaimer][disclaimer] for full details.
+
 ## License
 
 Copyright &copy; Ryan Johnson
@@ -24,9 +28,11 @@ Copyright &copy; Ryan Johnson
 Licensed under the [MIT License][license].
 
 [documentation]: https://tenthirtyam.org/community-vmware-desktop-hypervisor-mcp-server
+[disclaimer]: https://tenthirtyam.org/community-vmware-desktop-hypervisor-mcp-server/community/disclaimer
 [license]: LICENSE
 [notice]: NOTICE.md
 [sponsor]: https://github.com/sponsors/tenthirtyam
 [buy-me-a-coffee]: https://buymeacoffee.com/tenthirtyam
 
 [^1]: This project is based on the example used in by blog post, [MCP Servers: A Practical Guide to Context on Demand](https://tenthirtyam.org/dispatches/2026/06/26/mcp-servers-a-practical-guide-to-context-on-demand).
+[^2]: VMware, VMware Fusion, and VMware Workstation are registered trademarks of Broadcom. All other trademarks are the property of their respective owners.
