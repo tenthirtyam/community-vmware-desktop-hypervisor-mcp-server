@@ -1,3 +1,17 @@
+/* Site title in the header navbar — rendered in Fira Code on every page. */
+.md-header__topic:first-child .md-ellipsis {
+  font-family: "Fira Code", monospace;
+  font-weight: 300;
+}
+
+/* Tighten letter-spacing on mobile to keep the long site name from overflowing. */
+@media screen and (max-width: 59.9375em) {
+  .md-header__topic:first-child .md-ellipsis {
+    font-size: 0.65rem;
+    letter-spacing: -0.06em;
+  }
+}
+
 .md-typeset h1 {
   margin-bottom: .2em;
 }

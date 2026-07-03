@@ -27,7 +27,7 @@ PRE_COMMIT_STAMP := $(VENV)/.pre-commit-installed
 	uninstall uninstall-pre-commit \
 	lint format typecheck test test-cov test-e2e test-e2e-capabilities check coverage-gate pre-commit \
 	build discover \
-	docs docs-deploy docs-serve clean
+	docs docs-serve clean
 
 help:
 	@echo "Available commands:"
