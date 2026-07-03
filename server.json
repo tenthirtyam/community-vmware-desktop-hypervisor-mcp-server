@@ -1,0 +1,43 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "tenthirtyam/community-vmware-desktop-hypervisor-mcp-server",
+  "title": "A Community MCP Server for VMware Desktop Hypervisors",
+  "description": "A community MCP server that exposes VMware Fusion and VMware Workstation desktop hypervisor operations to MCP hosts.",
+  "repository": {
+    "url": "https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "community-vmware-desktop-hypervisor-mcp-server",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "runtimeHint": "python",
+      "environmentVariables": [
+        {
+          "name": "VMCLI_PATH",
+          "description": "Absolute path to the vmcli binary when not at the platform default.",
+          "isRequired": false,
+          "format": "string"
+        },
+        {
+          "name": "VMCLI_SEARCH_PATHS",
+          "description": "Colon-separated directories scanned for virtual machine configuration files.",
+          "isRequired": false,
+          "format": "string"
+        },
+        {
+          "name": "VMCLI_OUTPUT_FORMAT",
+          "description": "Output format for query actions: json, yaml, or toml.",
+          "isRequired": false,
+          "format": "string",
+          "default": "json"
+        }
+      ]
+    }
+  ]
+}
