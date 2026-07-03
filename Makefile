@@ -33,11 +33,11 @@ help:
 	@echo "Available commands:"
 	@echo "  make venv                  - Create the virtual environment"
 	@echo "  make install               - Install the package"
-	@echo "  make install-cursor        - Verify the Cursor MCP config"
+	@echo "  make install-cursor        - Create or update the Cursor MCP configuration"
 	@echo "  make install-dev           - Install development dependencies"
 	@echo "  make install-docs          - Install documentation dependencies"
 	@echo "  make install-pre-commit    - Install the pre-commit hook"
-	@echo "  make install-vscode        - Verify the VS Code MCP config"
+	@echo "  make install-vscode        - Create or update the VS Code MCP configuration"
 	@echo "  make uninstall             - Remove the virtual environment"
 	@echo "  make uninstall-pre-commit  - Remove the pre-commit hook"
 	@echo "  make lint                  - Run Ruff checks"
@@ -65,11 +65,6 @@ $(PYTHON):
 install: venv
 	$(PIP) install -e .
 
-install-cursor: install
-	@$(PYTHON) -c "import community_vmware_desktop_hypervisor_mcp_server" || \
-		(echo "Package not importable: run: make install" && exit 1)
-	@echo "Cursor MCP: open this repo in Cursor and enable community-vmware-desktop-hypervisor-mcp-server (see .cursor/mcp.json)"
-
 install-dev: venv
 install-dev: $(DEV_STAMP) $(PRE_COMMIT_STAMP)
 
@@ -94,10 +89,17 @@ $(PRE_COMMIT_STAMP): $(DEV_STAMP)
 	$(PYTHON) -m pre_commit install
 	@touch $(PRE_COMMIT_STAMP)
 
+install-cursor: install
+	@$(PYTHON) -c "import community_vmware_desktop_hypervisor_mcp_server" || \
+		(echo "Package not importable: run: make install" && exit 1)
+	@$(PYTHON) scripts/write_mcp_config.py cursor .cursor/mcp.json
+	@echo "Enable in Cursor under 'Cursor Settings > Tools & MCPs'."
+
 install-vscode: install
 	@$(PYTHON) -c "import community_vmware_desktop_hypervisor_mcp_server" || \
 		(echo "Package not importable: run: make install" && exit 1)
-	@echo "VS Code MCP: open this repo in VS Code and enable community-vmware-desktop-hypervisor-mcp-server (see .vscode/mcp.json)"
+	@$(PYTHON) scripts/write_mcp_config.py vscode .vscode/mcp.json
+	@echo "Start in VS Code under 'MCP: List Servers'."
 
 uninstall: uninstall-pre-commit
 	@if [ -d "$(VENV)" ]; then \
@@ -131,12 +133,12 @@ test-cov: install-dev
 	PYTHONPATH=src $(PYTEST) --cov --cov-report=html --cov-report=term
 
 test-e2e: install-dev
-	@test -n "$(VDH_E2E_VMX_PATH)" || (echo "Set VDH_E2E_VMX_PATH to your .vmx" && exit 1)
+	@test -n "$(VMCLI_E2E_VMX_PATH)" || (echo "Set VMCLI_E2E_VMX_PATH to your .vmx" && exit 1)
 	VDH_E2E=1 PYTHONPATH=src $(PYTEST) -m e2e -v --no-cov
 
 test-e2e-capabilities: install-dev
-	@test -n "$(VDH_E2E_VMX_PATH)" || (echo "Set VDH_E2E_VMX_PATH to your .vmx" && exit 1)
-	PYTHONPATH=src $(PYTHON) scripts/e2e_mcp_capabilities.py --vmx "$(VDH_E2E_VMX_PATH)"
+	@test -n "$(VMCLI_E2E_VMX_PATH)" || (echo "Set VMCLI_E2E_VMX_PATH to your .vmx" && exit 1)
+	PYTHONPATH=src $(PYTHON) scripts/e2e_mcp_capabilities.py --vmx "$(VMCLI_E2E_VMX_PATH)"
 
 check: lint typecheck test coverage-gate
 

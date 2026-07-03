@@ -183,6 +183,10 @@ ignore = [
 ]
 "src/community_vmware_desktop_hypervisor_mcp_server/_generated_actions.py" = ["E501", "Q000"]
 "src/community_vmware_desktop_hypervisor_mcp_server/discovery.py" = ["E501", "TCH003", "EM102", "SIM102", "PLR2004"]
+"scripts/*.py" = [
+    "T20",     # print() is intentional in CLI scripts
+    "PLR2004", # Magic values acceptable in CLI arg count checks
+]
 "src/community_vmware_desktop_hypervisor_mcp_server/context.py" = ["PLW0603", "PLC0415"]
 "src/community_vmware_desktop_hypervisor_mcp_server/schemas.py" = ["ANN102", "TCH001", "ANN101", "SIM102"]
 "src/community_vmware_desktop_hypervisor_mcp_server/tools.py" = ["E501", "ERA001", "TCH001", "TCH002", "TCH003"]
