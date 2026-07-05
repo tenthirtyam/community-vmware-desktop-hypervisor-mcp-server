@@ -5,6 +5,26 @@ description = "A Community MCP Server for VMware Desktop Hypervisors"
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
+authors = [
+  { name = "Ryan Johnson" },
+]
+keywords = [
+  "mcp",
+  "model-context-protocol",
+  "hypervisor",
+  "desktop-hypervisor",
+  "vmware-fusion",
+  "vmware-workstation",
+  "virtualization",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Operating System :: MacOS",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: POSIX :: Linux",
+]
 # 3.12+: shutil.which(PathLike) on Windows always returned None before 3.12 (cpython#85493).
 requires-python = ">=3.12"
 dependencies = [
@@ -34,12 +54,20 @@ docs = [
 [project.scripts]
 community-vmware-desktop-hypervisor-mcp-server = "community_vmware_desktop_hypervisor_mcp_server.server:main"
 
+[project.urls]
+documentation = "https://tenthirtyam.org/community-vmware-desktop-hypervisor-mcp-server"
+source        = "https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server"
+issues        = "https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server/discussions"
+
 [build-system]
 requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+community_vmware_desktop_hypervisor_mcp_server = ["manifest.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
