@@ -13,18 +13,18 @@ repos:
       - id: debug-statements
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.14
+    rev: v0.16.6
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]
       - id: ruff-format
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v2.1.0
+    rev: v2.3.1
     hooks:
       - id: mypy
         args: [--strict]
         additional_dependencies:
-          - mcp>=1.27.0
-          - pydantic>=2.0
+          - mcp>=1.29.1,<2
+          - pydantic>=2.13.5
         files: ^src/
